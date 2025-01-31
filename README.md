@@ -1,3 +1,3 @@
-# transformers_js_conversion_example
+# transformers.js browser example
 
-A simple example of converting and deploying an onnx-converted model using transformers.js
+A simple example of using a transformers.js in a browser app
