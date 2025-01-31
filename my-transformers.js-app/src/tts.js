@@ -1,5 +1,9 @@
-import { pipeline } from "@xenova/transformers";
-import { WaveFile } from "wavefile";
+// import { pipeline } from "@xenova/transformers";
+import { pipeline } from "../node_modules/@xenova/transformers";
+console.log(pipeline);
+
+// import { WaveFile } from "wavefile";
+import { WaveFile } from "../node_modules/wavefile";
 
 // Load the text-to-speech pipeline once
 const synthesizer = await pipeline(
@@ -7,9 +11,9 @@ const synthesizer = await pipeline(
   "neonwatty/mms-tts-mlg-onnx"
 );
 
-export async function generateSpeech(text) {
+export function generateSpeech(text) {
   try {
-    const output = await synthesizer(text);
+    const output = synthesizer(text);
 
     // Convert Float32Array to WAV format
     const wav = new WaveFile();
